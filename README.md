@@ -7,13 +7,13 @@ KEY CONCEPTS / THINGS  THAT  I LEARNED IN DESIGN AND ANALYSIS OF ALGORITHMS  COU
 I am passionate about technology and problem-solving. Here's a glimpse of my work:
 
 ## 🛠️ Projects
-- **Project 1**: A short description of your project.
-- **Project 2**: A short description of another project.
+- **Project 1**: City design-A layout of smartcity .
+- **Project 2**: Implementing Real world traffic monitoring and management.
 
 ## 🚀 Skills
-- C++, Python, JavaScript
+- C++, Python, C programming
 - Data Structures and Algorithms
-- Web Development (React.js, Node.js)
+
 
 ## 🌐 Find Me Online
 - [GitHub](https://github.com/your-github-username)
