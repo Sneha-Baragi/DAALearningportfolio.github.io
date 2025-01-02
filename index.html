@@ -54,6 +54,9 @@
             border-radius: 5px;
             font-family: monospace;
             font-size: 1.1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -138,24 +141,24 @@ using namespace std;
 
 void towers(int n, string from, string to, string aux) {
     if (n == 1) {
-        cout &lt;&lt; "Move disc 1 from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; endl;
+        cout << "Move disc 1 from " << from << " to " << to << endl;
         return;
     }
     towers(n-1, from, aux, to);
-    cout &lt;&lt; "Move disc " &lt;&lt; n &lt;&lt; " from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; endl;
+    cout << "Move disc " << n << " from " << from << " to " << to << endl;
     towers(n-1, aux, to, from);
 }
 
 int main() {
     int n;
     string A = "A", B = "B", C = "C";
-    cin &gt;&gt; n;
+    cin >> n;
 
     clock_t start = clock();
     towers(n, A, C, B);
     clock_t end = clock();
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
-    cout &lt;&lt; "Time taken for execution: " &lt;&lt; elapsed &lt;&lt; " seconds" &lt;&lt; endl;
+    cout << "Time taken for execution: " << elapsed << " seconds" << endl;
     return 0;
 }
 </code></pre>
