@@ -123,19 +123,19 @@
     </section>
 
     <script>
-        function showReflections(type) {
-            const title = document.getElementById('reflection-title');
-            const content = document.getElementById('reflection-content');
-            const reflections = document.getElementById('reflections');
+       function showReflections(type) {
+    const title = document.getElementById('reflection-title');
+    const content = document.getElementById('reflection-content');
+    const reflections = document.getElementById('reflections');
 
-             if (type === 'lab') {
-                title.innerText = 'Lab Reflections';
-                content.innerHTML = `
-                    <h3>Key Concepts / Things Learned in This Course</h3>
-                    <h4>Time Complexity Analysis</h4>
-                    <h5>Task 1</h5>
-                    <p>Write a recursive C++ program for the Towers of Brahma problem and record the time taken for given input sizes. Use a spreadsheet application and plot a graph presenting your results.</p>
-                    <pre class="code"><code>#include &lt;iostream&gt;
+    if (type === 'lab') {
+        title.innerText = 'Lab Reflections';
+        content.innerHTML = `
+            <h3>Key Concepts / Things Learned in This Course</h3>
+            <h4>Time Complexity Analysis</h4>
+            <h5>Task 1</h5>
+            <p>Write a recursive C++ program for the Towers of Brahma problem and record the time taken for given input sizes. Use a spreadsheet application and plot a graph presenting your results.</p>
+            <pre class="code"><code>#include &lt;iostream&gt;
 #include &lt;ctime&gt;
 using namespace std;
 
