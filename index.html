@@ -6,6 +6,48 @@
     <title>DAA Learning Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Button Styling */
+        button {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff9800;
+            border: none;
+            padding: 12px 24px;
+            margin: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #d97700;
+            transform: scale(1);
+        }
+
+        /* Reflections Content */
+        #reflections {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #reflections h2 {
+            color: #4CAF50;
+        }
+
+        #reflections p {
+            text-align: left;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -80,7 +122,31 @@
                 content.innerText = 'Lab reflections include hands-on learning experiences, implementation of algorithms, and the challenges faced during practical sessions.';
             } else if (type === 'theory') {
                 title.innerText = 'Theory Reflections';
-                content.innerText = 'Theory reflections cover conceptual understanding, problem-solving strategies, and insights gained during lectures.';
+                content.innerHTML = `
+                    <h3>Course Overview</h3>
+                    <p>This course dives deeply into the world of data structures and algorithms, emphasizing their creation, evaluation, and real-world applications in computational and engineering tasks. It integrates principles of mathematics, engineering, and advanced computer science techniques to equip students with the skills needed to analyze and solve a variety of computational problems.</p>
+
+                    <h3>What is the Course About?</h3>
+                    <p>The curriculum focuses on understanding the fundamental philosophies behind designing efficient algorithms and data structures. Topics include performance analysis methods, computational complexity, and strategies such as recursion, iteration, and backtracking. The course covers a wide array of data structures such as trees, graphs, heaps, and tries, as well as advanced algorithms for sorting, searching, shortest paths, and more.</p>
+
+                    <h3>What Data Structures and Algorithms Did You Study?</h3>
+                    <ul>
+                        <li>Linear Data Structures: Arrays, linked lists, stacks, and queues.</li>
+                        <li>Tree Structures: Binary search trees, AVL trees, red-black trees, heaps, and tries.</li>
+                        <li>Graph Representations: Adjacency lists and matrices, along with traversal methods like DFS and BFS.</li>
+                        <li>Specialized Structures: Segment trees, Fenwick trees, sparse tables, and skip lists.</li>
+                    </ul>
+
+                    <h3>How Does the Course Connect to Real-World Applications?</h3>
+                    <ul>
+                        <li>Web Applications: Database optimization through efficient searching and sorting.</li>
+                        <li>Game Development: Managing dynamic events with tree-based structures.</li>
+                        <li>Networking: Graph-based algorithms in routing protocols.</li>
+                        <li>Data Analytics: Efficient range queries using segment or Fenwick trees.</li>
+                        <li>Cybersecurity: Pattern searching in intrusion detection systems.</li>
+                        <li>Machine Learning: Priority-based tasks using heaps.</li>
+                    </ul>
+                `;
             }
 
             reflections.style.display = 'block';
