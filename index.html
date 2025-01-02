@@ -1,5 +1,4 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,6 +57,34 @@
         </dl>
 
         <blockquote>“Hard work beats talent when talent doesn't work hard.” – Tim Notke</blockquote>
+
+        <div>
+            <button onclick="showReflections('lab')">Lab Reflections</button>
+            <button onclick="showReflections('theory')">Theory Reflections</button>
+        </div>
+
+        <div id="reflections" style="display:none; margin-top: 20px;">
+            <h2 id="reflection-title"></h2>
+            <p id="reflection-content"></p>
+        </div>
     </section>
+
+    <script>
+        function showReflections(type) {
+            const title = document.getElementById('reflection-title');
+            const content = document.getElementById('reflection-content');
+            const reflections = document.getElementById('reflections');
+
+            if (type === 'lab') {
+                title.innerText = 'Lab Reflections';
+                content.innerText = 'Lab reflections include hands-on learning experiences, implementation of algorithms, and the challenges faced during practical sessions.';
+            } else if (type === 'theory') {
+                title.innerText = 'Theory Reflections';
+                content.innerText = 'Theory reflections cover conceptual understanding, problem-solving strategies, and insights gained during lectures.';
+            }
+
+            reflections.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
