@@ -133,118 +133,7 @@
                 content.innerHTML = `
                     <h3>Key Concepts / Things Learned in This Course</h3>
                     <h4>Time Complexity Analysis</h4>
-                    <h5>Task 1</h5>
-                    <p>Write a recursive C++ program for the Towers of Brahma problem and record the time taken for given input sizes. Use a spreadsheet application and plot a graph presenting your results.</p>
-                    <pre class="code"><code>#include &lt;iostream&gt;
-#include &lt;ctime&gt;
-using namespace std;
-
-void towers(int n, string from, string to, string aux) {
-    if (n == 1) {
-        cout << "Move disc 1 from " << from << " to " << to << endl;
-        return;
-    }
-    towers(n-1, from, aux, to);
-    cout << "Move disc " << n << " from " << from << " to " << to << endl;
-    towers(n-1, aux, to, from);
-}
-
-int main() {
-    int n;
-    string A = "A", B = "B", C = "C";
-    cin >> n;
-
-    clock_t start = clock();
-    towers(n, A, C, B);
-    clock_t end = clock();
-    double elapsed = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Time taken for execution: " << elapsed << " seconds" << endl;
-    return 0;
-}
-</code></pre>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>X-axis (Input)</th>
-                        <th>Y-axis (Time)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>0.649</td></tr>
-                    <tr><td>2</td><td>0.65</td></tr>
-                    <tr><td>3</td><td>0.937</td></tr>
-                    <tr><td>4</td><td>1.554</td></tr>
-                    <tr><td>5</td><td>1.98</td></tr>
-                    <tr><td>6</td><td>3.365</td></tr>
-                </tbody>
-            </table>
-
-            <h4>Task 2</h4>
-            <p>Compare and present the orders of growth of linear search and binary search for best-case, worst-case, and average-case inputs. Use the rand() function to generate random array inputs between size 0 to 1000. Present results using graphs.</p>
-            <pre class="code"><code>#include &lt;iostream&gt;
-#include &lt;ctime&gt;
-#include &lt;cstdlib&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-#define SIZE 50000
-#define ITER 10000
-
-int linear_search(int a[SIZE], int target) {
-    for (int i = 0; i < SIZE; i++) {
-        if (a[i] == target) return i;
-    }
-    return -1;
-}
-
-int binary_search(int a[SIZE], int target) {
-    int low = 0, high = SIZE - 1, mid;
-    while (low <= high) {
-        mid = (low + high) / 2;
-        if (a[mid] == target) return mid;
-        if (target > a[mid]) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}
-
-int main() {
-    int a[SIZE], target;
-    srand(78);
-
-    for (int i = 0; i < SIZE; i++) {
-        a[i] = rand() % SIZE;
-    }
-
-    cout &lt;&lt; "Enter the target number to search: ";
-    cin &gt;&gt; target;
-
-    clock_t start = clock();
-    for (int i = 0; i < ITER; i++) {
-        linear_search(a, target);
-    }
-    clock_t end = clock();
-    double linearTime = double(end - start) / (CLOCKS_PER_SEC * ITER);
-    cout &lt;&lt; "Linear Search Time (average per iteration): " &lt;&lt; linearTime &lt;&lt; " seconds" &lt;&lt; endl;
-
-    sort(a, a + SIZE);
-
-    start = clock();
-    for (int i = 0; i < ITER; i++) {
-        binary_search(a, target);
-    }
-    end = clock();
-    double binaryTime = double(end - start) / (CLOCKS_PER_SEC * ITER);
-    cout &lt;&lt; "Binary Search Time (average per iteration): " &lt;&lt; binaryTime &lt;&lt; " seconds" &lt;&lt; endl;
-
-    return 0;
-}
-</code></pre>
-        </section>
-    </div>
-</body>
-</html>
+                    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1173,7 +1062,7 @@ return ET
         </div>
 
         <!-- Bellman-Ford Algorithm -->
-        <h2>5. Bellman-Ford Algorithm</h2>
+        <h2>6. Bellman-Ford Algorithm</h2>
         <div class="algorithm">
             <h3>Bellman-Ford Algorithm</h3>
             <pre>
@@ -1215,11 +1104,7 @@ At the end, d[v] = δ(s, v), if no negative-weight cycles.
 </body>
 </html>
 
-int main() {
-    // Towers of Brahma logic here
-}
-                    </code></pre>
-                `;
+                  
             } else if (type === 'theory') {
                 title.innerText = 'Theory Reflections';
                 content.innerHTML = `
