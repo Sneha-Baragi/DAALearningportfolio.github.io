@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio for DAA Lab</title>
+</head>
+<body>
+    <header>
+        <h1>Portfolio for Design and Analysis of Algorithms Lab</h1>
+        <p><strong>NAME:</strong> Sneha Sanjeevkumar Baragi</p>
+        <p><strong>ROLLNO:</strong> 125</p>
+        <p><strong>DIV:</strong> F</p>
+        <p><strong>USN:</strong> 01FE23BCI054</p>
+        <p><strong>COURSE:</strong> Design and Analysis of Algorithms</p>
+    </header>
+
+    <hr>
+
+    <section>
+        <h2>Key Concepts / Things Learned in This Course</h2>
+
+        <h3>Time Complexity Analysis</h3>
+        <h4>Task 1</h4>
+        <p>Write a recursive C++ program for the Towers of Brahma problem and record the time taken for given input sizes. Use a spreadsheet application and plot a graph presenting your results.</p>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+using namespace std;
+
+void towers(int n, string from, string to, string aux) {
+    if (n == 1) {
+        cout &lt;&lt; "Move disc 1 from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; endl;
+        return;
+    }
+    towers(n-1, from, aux, to);
+    cout &lt;&lt; "Move disc " &lt;&lt; n &lt;&lt; " from " &lt;&lt; from &lt;&lt; " to " &lt;&lt; to &lt;&lt; endl;
+    towers(n-1, aux, to, from);
+}
+
+int main() {
+    int n;
+    string A = "A", B = "B", C = "C";
+    cin &gt;&gt; n;
+
+    clock_t start = clock();
+    towers(n, A, C, B);
+    clock_t end = clock();
+    double elapsed = double(end - start) / CLOCKS_PER_SEC;
+    cout &lt;&lt; "Time taken for execution: " &lt;&lt; elapsed &lt;&lt; " seconds" &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>X-axis (Input)</th>
+                    <th>Y-axis (Time)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>0.649</td></tr>
+                <tr><td>2</td><td>0.65</td></tr>
+                <tr><td>3</td><td>0.937</td></tr>
+                <tr><td>4</td><td>1.554</td></tr>
+                <tr><td>5</td><td>1.98</td></tr>
+                <tr><td>6</td><td>3.365</td></tr>
+            </tbody>
+        </table>
+
+        <h4>Task 2</h4>
+        <p>Compare and present the orders of growth of linear search and binary search for best-case, worst-case, and average-case inputs. Use the rand() function to generate random array inputs between size 0 to 1000. Present results using graphs.</p>
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+#include &lt;cstdlib&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+#define SIZE 50000
+#define ITER 10000
+
+int linear_search(int a[SIZE], int target) {
+    for (int i = 0; i < SIZE; i++) {
+        if (a[i] == target) return i;
+    }
+    return -1;
+}
+
+int binary_search(int a[SIZE], int target) {
+    int low = 0, high = SIZE - 1, mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (a[mid] == target) return mid;
+        if (target > a[mid]) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+}
+
+int main() {
+    int a[SIZE], target;
+    srand(78);
+
+    for (int i = 0; i < SIZE; i++) {
+        a[i] = rand() % SIZE;
+    }
+
+    cout &lt;&lt; "Enter the target number to search: ";
+    cin &gt;&gt; target;
+
+    clock_t start = clock();
+    for (int i = 0; i < ITER; i++) {
+        linear_search(a, target);
+    }
+    clock_t end = clock();
+    double linearTime = double(end - start) / (CLOCKS_PER_SEC * ITER);
+    cout &lt;&lt; "Linear Search Time (average per iteration): " &lt;&lt; linearTime &lt;&lt; " seconds" &lt;&lt; endl;
+
+    sort(a, a + SIZE);
+
+    start = clock();
+    for (int i = 0; i < ITER; i++) {
+        binary_search(a, target);
+    }
+    end = clock();
+    double binaryTime = double(end - start) / (CLOCKS_PER_SEC * ITER);
+    cout &lt;&lt; "Binary Search Time (average per iteration): " &lt;&lt; binaryTime &lt;&lt; " seconds" &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Input Size</th>
+                    <th>Linear Search</th>
+                    <th>Binary Search</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>100</td><td>0.001</td><td>0.001</td></tr>
+                <tr><td>1000</td><td>0.001</td><td>0.001</td></tr>
+                <tr><td>5000</td><td>0.001</td><td>0.001</td></tr>
+                <tr><td>10000</td><td>0.001</td><td>0.001</td></tr>
+                <tr><td>50000</td><td>0.001</td><td>0.001</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Additional Concepts</h3>
+        <h4>Sorting Algorithms</h4>
+        <p>Sorting algorithms include Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, and Heap Sort. Below are examples of some of these algorithms:</p>
+
+        <pre><code>// Bubble Sort Example
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+void bubbleSort(vector&lt;int&gt;& a) {
+    int n = a.size();
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+                swap(a[j], a[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    vector&lt;int&gt; a = {5, 3, 8, 6, 2};
+    bubbleSort(a);
+    for (int x : a) {
+        cout &lt;&lt; x &lt;&lt; " ";
+    }
+    return 0;
+}
+</code></pre>
+
+        <pre><code>// Quick Sort Example
+#include &lt;iostream&gt;
+using namespace std;
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return (i + 1);
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    quickSort(arr, 0, n - 1);
+    for (int i = 0; i < n; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+    return 0;
+}
+</code></pre>
+
+        <h3>Graph Algorithms</h3>
+        <p>Graph algorithms include Dijkstra's, Floyd's, Warshall's, Kruskal's, Prim's, and Bellman-Ford. Below is an example of Dijkstra's algorithm:</p>
+
+        <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#include &lt;climits&gt;
+using namespace std;
+
+typedef pair&lt;int, int&gt; iPair;
+
+void dijkstra(vector&lt;iPair&gt; adj[], int V, int src) {
+    priority_queue&lt;iPair, vector&lt;iPair&gt;, greater&lt;iPair&gt;&gt; pq;
+    vector&lt;int&gt; dist(V, INT_MAX);
+    pq.push(make_pair(0, src));
+    dist[src] = 0;
+
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+
+        for (auto x : adj[u]) {
+            int v = x.first;
+            int weight = x.second;
+
+            if (dist[v] > dist[u] + weight) {
+                dist[v] = dist[u] + weight;
+                pq.push(make_pair(dist[v], v));
+            }
+        }
+    }
+
+    for (int i = 0; i < V; ++i)
+        cout &lt;&lt; "Vertex: " &lt;&lt; i &lt;&lt; " Distance: " &lt;&lt; dist[i] &lt;&lt; endl;
+}
+
+int main() {
+    int V = 5;
+    vector&lt;iPair&gt; adj[V];
+    adj[0].push_back(make_pair(1, 2));
+    adj[0].push_back(make_pair(4, 1));
+    adj[1].push_back(make_pair(2, 3));
+    adj[4].push_back(make_pair(3, 2));
+    adj[3].push_back(make_pair(2, 5));
+
+    dijkstra(adj, V, 0);
+    return 0;
+}
+</code></pre>
+
+    </section>
+</body>
+</html>
