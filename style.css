@@ -121,9 +121,38 @@ blockquote {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .toggle-btn:hover {
     background: #388E3C;
+    transform: translateY(-2px);
+}
+
+.toggle-btn:active {
+    background: #2E7D32;
+    transform: translateY(0);
+}
+
+/* Styling for Buttons in Reflections */
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #388E3C;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(72, 239, 108, 0.6);
 }
