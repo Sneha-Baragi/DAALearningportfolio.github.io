@@ -1,44 +1,62 @@
-# DAALearningportfolio.github.io
-KEY CONCEPTS / THINGS  THAT  I LEARNED IN DESIGN AND ANALYSIS OF ALGORITHMS  COURSE
-## Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAA Learning Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Hello, I'm Sneha Sanjeevkumar Baragi 👋</h1>
+        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+    </header>
 
-### Hello, I'm [Sneha Sanjeevkumar Baragi] 👋
+    <section>
+        <h2>🛠️ Projects</h2>
+        <ul>
+            <li><strong>Project 1</strong>: City Design - A Layout of Smart City</li>
+            <li><strong>Project 2</strong>: Implementing Real-World Traffic Monitoring and Management</li>
+        </ul>
 
-I am passionate about technology and problem-solving. Here's a glimpse of my work:
+        <h2>🚀 Skills</h2>
+        <ul>
+            <li>C++, Python, C Programming</li>
+            <li>Data Structures and Algorithms</li>
+        </ul>
 
-## 🛠️ Projects
-- **Project 1**: City design-A layout of smartcity .
-- **Project 2**: Implementing Real world traffic monitoring and management.
+        <h2>🌐 Find Me Online</h2>
+        <ul>
+            <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/sneha-baragi-8212172aa" target="_blank">LinkedIn</a></li>
+        </ul>
 
-## 🚀 Skills
-- C++, Python, C programming
-- Data Structures and Algorithms
+        <h2>Portfolio Topic</h2>
+        <dl>
+            <dt>Course Name</dt>
+            <dd>Design and Analysis of Algorithms</dd>
 
+            <dt>Course Code</dt>
+            <dd>24ECAC203</dd>
 
-## 🌐 Find Me Online
-- [GitHub](https://github.com/your-github-username)
-- [LinkedIn]([https://linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/sneha-baragi-8212172aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app))
+            <dt>Name</dt>
+            <dd>Sneha Sanjeevkumar Baragi</dd>
 
-## Portfolio Topic
+            <dt>SRN</dt>
+            <dd>01FE23BCI054</dd>
 
-<dl>
-<dt>Course Name</dt>
-<dd>Design And Analysis of Algorithms</dd>
-<dt>Course Code</dt>
-<dd>24ECAC203</dd>
-<dt>Name</dt>
-<dd>Sneha Sanjeevkumar Baragi</dd>
-<dt>SRN</dt>
-<dd>01FE23BCI054</dd>
-<dt>Course Instructor</dt>
-<dd>K M M Rajashekharaiah</dd>
-<dt>University</dt>
-<dd>KLE Teachnological University Hubballi</dd>
-<dt>Portfolio Topic/Domain</dt>
-<dd>Learning portfolio</dd>
-</dl>
+            <dt>Course Instructor</dt>
+            <dd>K M M Rajashekharaiah</dd>
 
-<br> 
->  "Hard work beats talent when talent doesn't work hard." – Tim Notke
+            <dt>University</dt>
+            <dd>KLE Technological University Hubballi</dd>
 
->
+            <dt>Portfolio Topic/Domain</dt>
+            <dd>Learning Portfolio</dd>
+        </dl>
+
+        <blockquote>“Hard work beats talent when talent doesn't work hard.” – Tim Notke</blockquote>
+    </section>
+</body>
+</html>
